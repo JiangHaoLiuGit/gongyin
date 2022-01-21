@@ -1580,10 +1580,11 @@ export default {
           type: "warning",
           duration: 0,
         });
+        //
       } else {
         // 实例化socket,
-        new WebSocket("wss://www.rcwisdom.com:8282");
-        const socketUrl = "wss://www.rcwisdom.com:8282";
+        new WebSocket("wss://:8282");
+        const socketUrl = "wss://:8282";
 
         this.websock = new WebSocket(socketUrl);
         this.websock.onopen = function () {

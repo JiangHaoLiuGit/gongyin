@@ -127,6 +127,7 @@
                       type="success"
                       style="margin-right: 20px;display:inline-block;height:20px!important;"
                       @click="seeBei(scope.row,scope.$index)"
+                      v-if="scope.row.save_log_total != 0"
                       >记录</el-button
                     >
                   </div>
@@ -2698,8 +2699,22 @@ element.refund_money = Number(element.refund_money).toFixed(2)
 
     //填写退货地址
     sure_address () {
+      if(this.address_p.length == 0){
+        this.$message({
+          showClose: true,
+          message: "请先填写退货地址",
+          type: 'error'
+        });
+      }
       let that = this
       let data = this.address_p[parseInt(this.yuanActive)]
+      if(!data.name){
+        this.$message({
+          showClose: true,
+          message: "请先填写退货地址",
+          type: 'error'
+        });
+      }
       let add;
       add = {
         return_id : that.refundInfo.info.return_id,

@@ -1068,6 +1068,7 @@
   </div>
 </template>
 <script>
+import publicFile from '../../utils/publicFile'
 import {
   get_chat_record,
   user_info,
@@ -1425,12 +1426,12 @@ export default {
   },
   methods: {
     toProduct(id){
-      window.open("https://www.rcwisdom.com/h5/admin/supplier/index.html#/goods/onSale?product_id=" + id)
+      window.open(publicFile.address + "/h5/admin/supplier/index.html#/goods/onSale?product_id=" + id)
       // this.$router.push({path:"/goods/onSale",query:{product_id:id}})
     },
     toOrder(id){
       // windows.open()
-      window.open("https://www.rcwisdom.com/h5/admin/supplier/index.html#/order_/orderList_p?order_id=" + id)
+      window.open(publicFile.address + "/h5/admin/supplier/index.html#/order_/orderList_p?order_id=" + id)
       // this.$router.push({path:"/order_/orderList_p",query:{order_id:id}})
     },
     page(){

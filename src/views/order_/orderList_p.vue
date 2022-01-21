@@ -174,6 +174,7 @@
                       type="success"
                       style="margin-right: 20px;display:inline-block;height:20px!important;"
                       @click="seeBei(scope.row,scope.$index)"
+                      v-if="scope.row.save_log_total != 0"
                       >记录</el-button
                     >
                     <!-- <span style="margin-right:20px;">支付方式:{{ scope.row.pay_way_p }}</span> -->

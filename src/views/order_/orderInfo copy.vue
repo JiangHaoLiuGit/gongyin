@@ -871,7 +871,7 @@ export default {
     },
     
     go(uid){
-      window.open("https://www.rcwisdom.com/h5/admin/supplier/index.html#/?url=" + uid)
+      window.open(publicFile.address + "/h5/admin/supplier/index.html#/?url=" + uid)
     },
     //物流
     //点击发货按钮
