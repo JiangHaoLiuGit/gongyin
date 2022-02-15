@@ -1582,9 +1582,9 @@ export default {
         });
       } else {
         // 实例化socket,
+        // 念起即断,念起不随,念起即觉,觉之即无,
         new WebSocket("wss://:8282");
         const socketUrl = "wss://:8282";
-
         this.websock = new WebSocket(socketUrl);
         this.websock.onopen = function () {
           //开启心跳
@@ -2880,4 +2880,8 @@ export default {
     max-width: 300px;
   }
 }
+// /deeps//deeps//deeps//deeps//deeps//deeps//deeps/
+
+// 念起即断,念起不随,念起即觉,觉之即无
 </style>
+

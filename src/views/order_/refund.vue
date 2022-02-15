@@ -28,10 +28,15 @@
     <div class="seach">
       
     </div>
+    <div class="sreachDiv clearfix">
+      
+       
+    </div>
     <div class="seach_copy">
       <div class="seach_select">
-        <el-date-picker
-        v-model="time_value"
+      <el-date-picker
+        v-model="time_value" 
+        class="lt"
         type="datetimerange"
         :picker-options="pickerOptions"
         range-separator="至"
@@ -39,6 +44,7 @@
         end-placeholder="结束日期"
       >
       </el-date-picker>
+      <el-input  class="lt" v-model="refund_search" @keyup.enter.native="pick_seach()" style="width:300px" placeholder="订单/售后/三方交易号/收货人/收货人电话"></el-input>
       <!-- <el-date-picker
         :clearable="false"
         v-model="time_value"
@@ -59,12 +65,12 @@
           >
           </el-option>
         </el-select> -->
-        <el-input v-model="refund_search" @keyup.enter.native="pick_seach()" style="width:300px" placeholder="订单/售后/三方交易号/收货人/收货人电话"></el-input>
+        
       </div>
       <div class="button_type">
-        <el-button type="success" @click="user_derive_excel1">导出</el-button>
-        <el-button type="primary" @click="pick_seach">搜索</el-button>
-        <el-button type="primary" icon="el-icon-refresh" @click="fn1(1)"
+       <el-button  class="lt" type="success" @click="user_derive_excel1">导出</el-button>
+        <el-button  class="lt" type="primary" @click="pick_seach">搜索</el-button>
+        <el-button class="lt" type="primary" icon="el-icon-refresh" @click="fn1(1)"
           >刷新</el-button
         >
       </div>

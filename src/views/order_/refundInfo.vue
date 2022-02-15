@@ -108,7 +108,7 @@
                 title="卖家处理退款"
                 :description="refundInfo.info.refund_time"
               ></el-step>
-              <el-step title="退款完成"></el-step>
+              <el-step title="退款完成" :description="refundInfo.info.refund_time"></el-step>
             </el-steps>
           </div>
         </div>
@@ -162,7 +162,7 @@
                 :description="refundInfo.info.refund_time"
               ></el-step>
               <el-step title="买家寄回商品" :description="refundInfo.info.express_time"></el-step>
-              <el-step title="退款完成"></el-step>
+              <el-step title="退款完成" :description="refundInfo.info.refund_time"></el-step>
             </el-steps>
           </div>
         </div>
@@ -2243,13 +2243,13 @@ export default {
   flex-basis: 500px !important;
 }
 /deep/ .jin .el-steps .el-step.is-horizontal:nth-of-type(3) {
-  flex-basis: 100px !important;
+  flex-basis: 200px !important;
 }
 /deep/ .huo .el-step.is-horizontal {
   flex-basis: 400px !important;
 }
 /deep/ .huo .el-steps .el-step.is-horizontal:nth-of-type(4) {
-  flex-basis: 100px !important;
+  flex-basis: 200px !important;
 }
 .info {
   padding: 10px 20px;

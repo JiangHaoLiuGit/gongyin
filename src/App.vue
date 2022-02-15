@@ -285,6 +285,16 @@ export default {
   overflow: hidden;
   word-break: break-all;
 }
+.sreachDiv{
+  padding: 0 10px 10px 10px;
+  .lt{
+    margin-right: 15px;
+    margin-top: 10px;
+  }
+  .el-button+.el-button{
+    margin-left: 0;
+  }
+}
 .shen2{
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;

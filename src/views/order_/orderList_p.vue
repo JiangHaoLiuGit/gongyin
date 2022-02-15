@@ -50,9 +50,8 @@
       >
       </el-date-picker> -->
     </div>
-    <div class="seach_copy">
-      <div class="seach_select">
-        <el-select v-model="pick_condition" placeholder="请选择搜索类型">
+    <div class="sreachDiv clearfix">
+      <el-select class="lt" v-model="pick_condition" placeholder="请选择搜索类型">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -61,7 +60,44 @@
           >
           </el-option>
         </el-select>
-        <el-input v-model="pick_value" placeholder="请输入搜索内容" @keyup.enter.native="pick_seach" style="width:240px"></el-input>
+        <el-input class="lt" v-model="pick_value" placeholder="请输入搜索内容" @keyup.enter.native="pick_seach" style="width:240px"></el-input>
+        <el-select class="lt" v-model="comm_status_value" placeholder="请选择订单类型">
+          <el-option
+            v-for="item in comm_method_list"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          >
+          </el-option>
+        </el-select>
+      <el-select class="lt" v-model="time_type" placeholder="时间类型">
+        <el-option
+          v-for="item in time_list"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        >
+        </el-option>
+      </el-select>
+      <el-date-picker
+        v-model="time_value"
+        class="lt"
+        type="datetimerange"
+        :picker-options="pickerOptions"
+        range-separator="至"
+        start-placeholder="开始日期"
+        end-placeholder="结束日期"
+      >
+      </el-date-picker>
+        <el-button class="lt" type="success" @click="user_derive_excel1">导出</el-button>
+        <el-button class="lt" type="primary" @click="pick_seach">搜索</el-button>
+        <el-button class="lt" type="primary" icon="el-icon-refresh" @click="fn1(1)"
+          >刷新</el-button
+        >
+    </div>
+    <!-- <div class="seach_copy">
+      <div class="seach_select"> -->
+        
         <!-- <el-select v-model="payment_status_value" placeholder="请选择支付方式">
         <el-option
           v-for="item in payment_method_list"
@@ -80,44 +116,14 @@
         >
         </el-option>
       </el-select> -->
-      <el-select v-model="comm_status_value" placeholder="请选择订单类型">
-          <el-option
-            v-for="item in comm_method_list"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          >
-          </el-option>
-        </el-select>
-      <el-select v-model="time_type" placeholder="时间类型">
-        <el-option
-          v-for="item in time_list"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        >
-        </el-option>
-      </el-select>
-      <el-date-picker
-        v-model="time_value"
-        type="datetimerange"
-        :picker-options="pickerOptions"
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期"
-      >
-      </el-date-picker>
+      
         
         
-      </div>
+      <!-- </div>
       <div class="button_type">
-        <el-button type="success" @click="user_derive_excel1">导出</el-button>
-        <el-button type="primary" @click="pick_seach">搜索</el-button>
-        <el-button type="primary" icon="el-icon-refresh" @click="fn1(1)"
-          >刷新</el-button
-        >
+        
       </div>
-    </div>
+    </div> -->
 
     <el-row :gutter="20" class="goodsindex-list2">
       <el-col :span="24">
@@ -836,7 +842,7 @@
               </div>
               <div class="lt cont">
                 <div class="text"><el-radio v-model="radio" label="1">快递物流</el-radio></div>
-                <div class="text" style="margin-top:5px"><el-radio v-model="radio" label="2">买家自提</el-radio></div>
+                <!-- <div class="text" style="margin-top:5px"><el-radio v-model="radio" label="2">买家自提</el-radio></div> -->
               </div>
             </div>
             <div class="lt son">
